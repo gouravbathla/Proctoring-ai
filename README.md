@@ -1,70 +1,156 @@
-# Getting Started with Create React App
+# 🕵️‍♂️ AI Proctor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, AI-powered online exam proctoring system with real-time face/head monitoring, object detection, and a proctor dashboard.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📋 Table of Contents
 
-### `npm start`
+- [🚀 Features](#-features)
+- [🛠 Tech Stack](#-tech-stack)
+- [⚙ Installation](#-installation)
+- [🔧 Configuration](#-configuration)
+- [📁 Project Structure](#-project-structure)
+- [📚 Usage Guide](#-usage-guide)
+- [🚀 Deployment](#-deployment)
+- [📄 License](#-license)
+- [🙏 Acknowledgments](#-acknowledgments)
+- [📞 Support](#-support)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Features
 
-### `npm test`
+- 👤 **User Authentication** (Student login with roll number)
+- 📝 **Online Exam Interface** (MCQs, timer, auto-submit)
+- 🖥 **Fullscreen Enforcement** (Auto-submit on exit)
+- 🎥 **Webcam Proctoring** (Face registration, live face verification)
+- 🧑‍🤝‍🧑 **Multiple Face Detection** (Auto-submit if more than one face)
+- 🤳 **Object Detection** (Detects phones, laptops, etc. and auto-submits)
+- 🧑‍💻 **Head Movement Tracking** (Detects suspicious head movement)
+- 📊 **Proctor Dashboard** (Live alerts, analytics, and charts)
+- 🛡 **Anti-cheating Measures** (Logs, auto-submission, and alerts)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🛠 Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Frontend:** React, Bootstrap, React Webcam, Recharts
+- **Backend:** Flask, Flask-CORS, OpenCV, MediaPipe, YOLOv5 (PyTorch)
+- **AI/ML:** MediaPipe (face detection), YOLOv5 (object detection)
+- **Other:** Python, JavaScript, HTML/CSS
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ⚙ Installation
 
-### `npm run eject`
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/yourusername/ai-proctor.git
+   cd ai-proctor
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. **Frontend Setup:**
+   ```sh
+   cd ai-proctor
+   npm install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. **Backend Setup:**
+   ```sh
+   cd backend
+   python -m venv venv
+   venv/Scripts/activate  # On Windows
+   # or
+   source venv/bin/activate  # On Mac/Linux
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   pip install -r requirements.txt
+   # Or manually:
+   pip install flask flask-cors opencv-python mediapipe torch torchvision yolov5
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🔧 Configuration
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Frontend:**  
+  - Update API URLs in React if your backend runs on a different port.
+- **Backend:**  
+  - Ensure YOLOv5 model weights are downloaded on first run.
+  - Set CORS as needed for your deployment.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 📁 Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+ai-proctor/
+  ├── ai-proctor/           # React frontend
+  │   ├── src/
+  │   │   ├── components/
+  │   │   ├── pages/
+  │   │   ├── App.js
+  │   │   └── App.css
+  │   └── public/
+  ├── backend/              # Flask backend
+  │   ├── venv/
+  │   └── app.py
+  ├── requirements.txt
+  └── README.md
+```
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📚 Usage Guide
 
-### Making a Progressive Web App
+1. **Start the backend:**
+   ```sh
+   cd backend
+   venv/Scripts/activate  # or source venv/bin/activate
+   python app.py
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+2. **Start the frontend:**
+   ```sh
+   cd ai-proctor
+   npm start
+   ```
 
-### Advanced Configuration
+3. **Workflow:**
+   - Student logs in with roll number.
+   - Reads instructions and acknowledges.
+   - Registers face before exam starts.
+   - Exam runs in fullscreen; webcam monitors face, head, and objects.
+   - Alerts and logs are sent to the proctor dashboard.
+   - Proctor can view live analytics and logs.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## 🚀 Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **Frontend:** Deploy with Vercel, Netlify, or any static hosting.
+- **Backend:** Deploy Flask app on Heroku, AWS, or any Python server.
+- **Environment Variables:** Set backend API URLs as needed for production.
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 🙏 Acknowledgments
+
+- [MediaPipe](https://mediapipe.dev/)
+- [YOLOv5 by Ultralytics](https://github.com/ultralytics/yolov5)
+- [React](https://reactjs.org/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Recharts](https://recharts.org/)
+- Open source contributors and the AI/ML community
+
+---
+
+## 📞 Support
+
+For questions, issues, or feature requests, please open an issue on [GitHub](https://github.com/yourusername/ai-proctor/issues) or contact [your.email@example.com](kartikbansal9152@gmail.com). 
