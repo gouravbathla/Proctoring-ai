@@ -128,9 +128,9 @@ ai-proctor/
 
 ## 🚀 Deployment
 
-- **Frontend:** Deploy with Vercel, Netlify, or any static hosting.
-- **Backend:** Deploy Flask app on Heroku, AWS, or any Python server.
-- **Environment Variables:** Set backend API URLs as needed for production.
+- **Frontend:**.
+- **Backend:**.
+- **Environment Variables:**.
 
 ---
 
