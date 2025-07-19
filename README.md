@@ -153,4 +153,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## 📞 Support
 
-For questions, issues, or feature requests, please open an issue on [GitHub](https://github.com/yourusername/ai-proctor/issues) or contact [kartikbansal9152@gmail.com](). 
+For questions, issues, or feature requests, please open an issue on [GitHub](https://github.com/kartikbansal1111/Proctoring-ai/issues) or contact [kartikbansal9152@gmail.com](). 
